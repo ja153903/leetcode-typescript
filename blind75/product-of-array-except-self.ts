@@ -1,6 +1,4 @@
 function productExceptSelf(nums: number[]): number[] {
-  // we should make a forward pass
-  // then a backwards pass
   const result: Array<number> = new Array(nums.length).fill(1);
 
   for (let i = 1; i < nums.length; i++) {
