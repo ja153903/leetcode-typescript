@@ -1,3 +1,5 @@
+// what is the base case here? to get to dp[0][0] there is only 1 unique path
+// this means that our base case should be 1
 function uniquePaths(m: number, n: number): number {
   // we can let dp[i][j] denote the number of unique paths up to that combination of i and j
   // given we can only move in horizontal and vertical directions, we know that
