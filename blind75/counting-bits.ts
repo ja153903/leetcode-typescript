@@ -1,5 +1,5 @@
 function countBits(n: number): number[] {
-  const dp: Array<number> = new Array(n + 1).fill(0)
+  const dp: Array<number> = new Array(n + 1).fill(0);
 
   // dp[0] = 0 | 0000
   // dp[1] = 1 | 0001
@@ -15,10 +15,10 @@ function countBits(n: number): number[] {
   for (let i = 1; i <= n; i++) {
     // the idea here is that we can look to the current value i logically bitshift
     // to the right and we would add 1 if the rightmost bit of i is currently 1
-    dp[i] = dp[i >>> 1] + ((i & 1) === 1 ? 1 : 0)
+    dp[i] = dp[i >>> 1] + ((i & 1) === 1 ? 1 : 0);
   }
 
-  return dp
+  return dp;
 }
 
-export { countBits }
+export { countBits };

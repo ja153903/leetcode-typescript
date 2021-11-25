@@ -1,9 +1,9 @@
 class Node {
-  val: number
-  neighbors: Node[]
+  val: number;
+  neighbors: Node[];
   constructor(val?: number, neighbors?: Node[]) {
-    this.val = val === undefined ? 0 : val
-    this.neighbors = neighbors === undefined ? [] : neighbors
+    this.val = val === undefined ? 0 : val;
+    this.neighbors = neighbors === undefined ? [] : neighbors;
   }
 }
 
@@ -11,59 +11,59 @@ function cloneGraph(node: Node | null): Node | null {
   // iterate over all the graph nodes
   // create copies of each graph node and store them in a hashmap
   if (!node) {
-    return null
+    return null;
   }
 
-  const hashmap = new Map<number, Node>()
+  const hashmap = new Map<number, Node>();
 
-  let seen = new Set<number>()
-  let queue: Array<Node> = []
-  queue.push(node)
+  let seen = new Set<number>();
+  let queue: Array<Node> = [];
+  queue.push(node);
 
   while (queue.length) {
-    const front: Node | undefined = queue.shift()
+    const front: Node | undefined = queue.shift();
 
-    if (front === undefined) break
+    if (front === undefined) break;
 
     if (!seen.has(front.val)) {
-      seen.add(front?.val)
-      hashmap.set(front.val, new Node(front.val))
+      seen.add(front?.val);
+      hashmap.set(front.val, new Node(front.val));
 
       for (const neighbor of front.neighbors) {
-        queue.push(neighbor)
+        queue.push(neighbor);
       }
     }
   }
 
-  seen = new Set<number>()
-  queue = []
-  queue.push(node)
+  seen = new Set<number>();
+  queue = [];
+  queue.push(node);
 
   while (queue.length) {
-    const front: Node | undefined = queue.shift()
+    const front: Node | undefined = queue.shift();
 
-    if (front === undefined) break
+    if (front === undefined) break;
 
     if (!seen.has(front.val)) {
-      seen.add(front?.val)
+      seen.add(front?.val);
 
-      const current = hashmap.get(front.val)
+      const current = hashmap.get(front.val);
       if (current === undefined) {
-        break
+        break;
       }
 
       for (const neighbor of front.neighbors) {
-        const currentNeighbor = hashmap.get(neighbor.val)
+        const currentNeighbor = hashmap.get(neighbor.val);
         if (currentNeighbor !== undefined) {
-          current.neighbors.push(currentNeighbor)
+          current.neighbors.push(currentNeighbor);
         }
 
-        queue.push(neighbor)
+        queue.push(neighbor);
       }
     }
   }
 
-  return hashmap.get(node.val) ?? null
+  return hashmap.get(node.val) ?? null;
 }
 
-export { cloneGraph }
+export { cloneGraph };

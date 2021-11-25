@@ -1,40 +1,40 @@
 function threeSum(nums: number[]): number[][] {
-  const result: number[][] = []
+  const result: number[][] = [];
 
-  nums.sort((a, b) => a - b)
+  nums.sort((a, b) => a - b);
 
   for (let i = 0; i < nums.length - 2; i++) {
     if (i === 0 || (i > 0 && nums[i] !== nums[i - 1])) {
-      let j = i + 1
-      let k = nums.length - 1
+      let j = i + 1;
+      let k = nums.length - 1;
 
-      const target = -nums[i]
+      const target = -nums[i];
 
       while (j < k) {
-        const current = nums[j] + nums[k]
+        const current = nums[j] + nums[k];
 
         if (target === current) {
-          result.push([nums[i], nums[j], nums[k]])
+          result.push([nums[i], nums[j], nums[k]]);
 
           while (j < k && nums[j] === nums[j + 1]) {
-            j++
+            j++;
           }
           while (j < k && nums[k] === nums[k - 1]) {
-            k--
+            k--;
           }
 
-          j++
-          k--
+          j++;
+          k--;
         } else if (target > current) {
-          j++
+          j++;
         } else {
-          k--
+          k--;
         }
       }
     }
   }
 
-  return result
+  return result;
 }
 
-export { threeSum }
+export { threeSum };
