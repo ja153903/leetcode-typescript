@@ -23,8 +23,7 @@ function cloneGraph(node: Node | null): Node | null {
   while (queue.length) {
     const front: Node | undefined = queue.shift()
 
-    if (front === undefined)
-      break
+    if (front === undefined) break
 
     if (!seen.has(front.val)) {
       seen.add(front?.val)
@@ -36,7 +35,6 @@ function cloneGraph(node: Node | null): Node | null {
     }
   }
 
-
   seen = new Set<number>()
   queue = []
   queue.push(node)
@@ -44,8 +42,7 @@ function cloneGraph(node: Node | null): Node | null {
   while (queue.length) {
     const front: Node | undefined = queue.shift()
 
-    if (front === undefined)
-      break
+    if (front === undefined) break
 
     if (!seen.has(front.val)) {
       seen.add(front?.val)
