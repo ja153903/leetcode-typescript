@@ -1,4 +1,4 @@
-type Graph = Map<number, Array<number>>;
+type Graph = Map<number, Array<number>>
 /**
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1.
  * You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
@@ -21,46 +21,46 @@ function canFinish(
   prerequisites: number[][],
 ): boolean {
   // keep track of node and its prerequisites
-  const graph: Graph = new Map();
+  const graph: Graph = new Map()
   for (let i = 0; i < numCourses; i++) {
-    graph.set(i, []);
+    graph.set(i, [])
   }
 
-  const degree: Array<number> = new Array(numCourses).fill(0);
+  const degree: Array<number> = new Array(numCourses).fill(0)
 
   for (const [course, prereq] of prerequisites) {
-    graph.get(prereq)?.push(course);
-    degree[course]++;
+    graph.get(prereq)?.push(course)
+    degree[course]++
   }
 
   // output array
-  const bfs: Array<number> = [];
+  const bfs: Array<number> = []
 
   // find the vertices with in-degree 0
   degree.forEach((d, index) => {
     if (d === 0) {
-      bfs.push(index);
+      bfs.push(index)
     }
-  });
+  })
 
   while (bfs.length > 0) {
     // using the vertext of in-degree 0, we find
     // all its outgoing edges
-    const front = bfs.shift() ?? 0;
+    const front = bfs.shift() ?? 0
 
     for (const prereq of graph.get(front) ?? []) {
       // remove degree as we remove it from the graph
-      degree[prereq]--;
+      degree[prereq]--
       // if degree is now 0, we add it to bfs (the output array)
       if (degree[prereq] === 0) {
-        bfs.push(prereq);
+        bfs.push(prereq)
       }
     }
   }
 
   // we check that the graph is empty
   // if the graph is not empty, then this means we have a cycle
-  return Math.max(...degree) == 0;
+  return Math.max(...degree) == 0
 }
 
-export { canFinish };
+export { canFinish }

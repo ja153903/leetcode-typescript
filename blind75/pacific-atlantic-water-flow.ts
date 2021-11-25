@@ -3,7 +3,7 @@ const directions = [
   [1, 0],
   [0, 1],
   [0, -1],
-];
+]
 /**
  * There is an m x n rectangular island that borders both the Pacific Ocean and Atlantic Ocean.
  * The Pacific Ocean touches the island's left and top edges, and the Atlantic Ocean touches the island's right and bottom edges.
@@ -15,51 +15,51 @@ const directions = [
  * Return a 2D list of grid coordinates result where result[i] = [ri, ci] denotes that rain water can flow from cell (ri, ci) to both the Pacific and Atlantic oceans.
  */
 function pacificAtlantic(heights: number[][]): number[][] {
-  const result: number[][] = [];
+  const result: number[][] = []
 
-  const pacificQueue: number[][] = [];
-  const atlanticQueue: number[][] = [];
+  const pacificQueue: number[][] = []
+  const atlanticQueue: number[][] = []
 
-  const rows = heights.length;
-  const columns = heights[0].length;
+  const rows = heights.length
+  const columns = heights[0].length
 
   const pacificVisited: boolean[][] = generateBooleanMatrix(
     rows,
     columns,
-  );
+  )
   const atlanticVisited: boolean[][] = generateBooleanMatrix(
     rows,
     columns,
-  );
+  )
 
   for (let i = 0; i < rows; i++) {
-    pacificQueue.push([i, 0]);
-    atlanticQueue.push([i, columns - 1]);
+    pacificQueue.push([i, 0])
+    atlanticQueue.push([i, columns - 1])
 
-    pacificVisited[i][0] = true;
-    atlanticVisited[i][columns - 1] = true;
+    pacificVisited[i][0] = true
+    atlanticVisited[i][columns - 1] = true
   }
 
   for (let i = 0; i < columns; i++) {
-    pacificQueue.push([0, i]);
-    atlanticQueue.push([rows - 1, i]);
+    pacificQueue.push([0, i])
+    atlanticQueue.push([rows - 1, i])
 
-    pacificVisited[0][i] = true;
-    atlanticVisited[rows - 1][i] = true;
+    pacificVisited[0][i] = true
+    atlanticVisited[rows - 1][i] = true
   }
 
-  bfs(heights, pacificQueue, pacificVisited);
-  bfs(heights, atlanticQueue, atlanticVisited);
+  bfs(heights, pacificQueue, pacificVisited)
+  bfs(heights, atlanticQueue, atlanticVisited)
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
       if (pacificVisited[i][j] && atlanticVisited[i][j]) {
-        result.push([i, j]);
+        result.push([i, j])
       }
     }
   }
 
-  return result;
+  return result
 }
 
 function bfs(
@@ -67,15 +67,15 @@ function bfs(
   queue: number[][],
   visited: boolean[][],
 ) {
-  const rows = heights.length;
-  const columns = heights[0].length;
+  const rows = heights.length
+  const columns = heights[0].length
 
   while (queue.length > 0) {
-    const front = queue.shift() ?? [-1, -1];
+    const front = queue.shift() ?? [-1, -1]
 
     for (const direction of directions) {
-      const dx = front[0] + direction[0];
-      const dy = front[1] + direction[1];
+      const dx = front[0] + direction[0]
+      const dy = front[1] + direction[1]
 
       if (
         dx < 0 ||
@@ -85,11 +85,11 @@ function bfs(
         visited[dx][dy] ||
         heights[dx][dy] < heights[front[0]][front[1]]
       ) {
-        continue;
+        continue
       }
 
-      visited[dx][dy] = true;
-      queue.push([dx, dy]);
+      visited[dx][dy] = true
+      queue.push([dx, dy])
     }
   }
 }
@@ -98,12 +98,12 @@ function generateBooleanMatrix(
   rows: number,
   columns: number,
 ): boolean[][] {
-  const matrix: boolean[][] = new Array(rows);
+  const matrix: boolean[][] = new Array(rows)
   for (let i = 0; i < rows; i++) {
-    matrix[i] = new Array(columns).fill(false);
+    matrix[i] = new Array(columns).fill(false)
   }
 
-  return matrix;
+  return matrix
 }
 
-export { pacificAtlantic };
+export { pacificAtlantic }

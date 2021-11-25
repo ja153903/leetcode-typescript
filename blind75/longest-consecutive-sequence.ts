@@ -1,4 +1,3 @@
-function longestConsecutive(nums: number[]): number {
-}
+function longestConsecutive(nums: number[]): number {}
 
-export { longestConsecutive };
+export { longestConsecutive }
