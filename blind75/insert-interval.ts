@@ -24,6 +24,7 @@ function insert(
 
   result.push(newInterval)
 
+  // add the rest of the intervals
   while (i < intervals.length) {
     result.push(intervals[i])
     i += 1

@@ -5,8 +5,6 @@ function merge(intervals: number[][]): number[][] {
 
   // to merge intervals, we should make sure that
   // the array is sorted
-  // once we know its sorted, we can then implement
-  // some logic and process each one by one
   intervals.sort((a, b) => {
     if (a[0] === b[0]) {
       return a[1] - b[1]
@@ -18,8 +16,10 @@ function merge(intervals: number[][]): number[][] {
   const result: number[][] = [intervals[0]]
 
   for (let i = 1; i < intervals.length; i++) {
+    // the end of the interval we stored in result is greater than
+    // or equal to the current interval then this means
+    // that we can consume this interval
     if (result[result.length - 1][1] >= intervals[i][0]) {
-      // this means we can possible merge the intervals
       result[result.length - 1] = [
         Math.min(result[result.length - 1][0], intervals[i][0]),
         Math.max(result[result.length - 1][1], intervals[i][1]),

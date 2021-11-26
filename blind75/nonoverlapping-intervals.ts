@@ -9,6 +9,8 @@ function eraseOverlapIntervals(intervals: number[][]): number {
   let count = 1
 
   for (let i = 1; i < intervals.length; i++) {
+    // if the start of the current interval is bigger than the previous end
+    // then this means we have a non-overlapping interval
     if (intervals[i][0] >= end) {
       end = intervals[i][1]
       count += 1
