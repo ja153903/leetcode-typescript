@@ -18,7 +18,7 @@ function merge(intervals: number[][]): number[][] {
   const result: number[][] = [intervals[0]]
 
   for (let i = 1; i < intervals.length; i++) {
-    if (result[result.length-1][1] >= intervals[i][0]) {
+    if (result[result.length - 1][1] >= intervals[i][0]) {
       // this means we can possible merge the intervals
       result[result.length - 1] = [
         Math.min(result[result.length - 1][0], intervals[i][0]),

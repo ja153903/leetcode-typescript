@@ -12,6 +12,7 @@ function insert(
     i += 1
   }
 
+  // modify the newInterval we should insert
   while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
     newInterval = [
       Math.min(newInterval[0], intervals[i][0]),
