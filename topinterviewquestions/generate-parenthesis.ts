@@ -7,7 +7,13 @@ function generateParenthesis(n: number): string[] {
   return result
 }
 
-function backtrack(n: number, open: number, close: number, result: string[], current: string) {
+function backtrack(
+  n: number,
+  open: number,
+  close: number,
+  result: string[],
+  current: string,
+) {
   if (current.length === n * 2) {
     result.push(current)
     return

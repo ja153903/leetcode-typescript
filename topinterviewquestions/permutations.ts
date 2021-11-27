@@ -7,13 +7,19 @@ function permute(nums: number[]): number[][] {
   return result
 }
 
-function backtrack(nums: number[], result: number[][], current: number[]) {
+function backtrack(
+  nums: number[],
+  result: number[][],
+  current: number[],
+) {
   if (current.length === nums.length) {
     result.push([...current])
   } else {
     for (let i = 0; i < nums.length; i++) {
       // if the number is in here, then we ignore it
-      if (current.includes(nums[i])) { continue }
+      if (current.includes(nums[i])) {
+        continue
+      }
 
       // include number backtrack then remove
       current.push(nums[i])

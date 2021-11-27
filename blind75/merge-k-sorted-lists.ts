@@ -7,9 +7,7 @@ class ListNode {
   }
 }
 
-function mergeKLists(
-  lists: Array<ListNode | null>,
-): ListNode | null {
+function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   return null
 }
 
