@@ -1,11 +1,20 @@
-const directions = [[0, 1], [0, -1], [1, 0], [-1, 0], [1, 1], [-1, -1], [-1, 1], [1, -1]]
+const directions = [
+  [0, 1],
+  [0, -1],
+  [1, 0],
+  [-1, 0],
+  [1, 1],
+  [-1, -1],
+  [-1, 1],
+  [1, -1],
+]
 
 function gameOfLife(board: number[][]): void {
   const copy = createCopy(board)
 
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
-      const numNeighbors = countNeighbors(board, i , j)
+      const numNeighbors = countNeighbors(board, i, j)
 
       if (board[i][j] === 1) {
         if (numNeighbors < 2 || numNeighbors > 3) {
@@ -26,14 +35,24 @@ function gameOfLife(board: number[][]): void {
   }
 }
 
-function countNeighbors(board: number[][], i: number, j: number): number {
+function countNeighbors(
+  board: number[][],
+  i: number,
+  j: number,
+): number {
   let numNeighbors = 0
 
   for (const [dx, dy] of directions) {
     const cx = i + dx
     const cy = j + dy
 
-    if (cx < 0 || cx >= board.length || cy < 0 || cy >= board[0].length || board[cx][cy] === 0) {
+    if (
+      cx < 0 ||
+      cx >= board.length ||
+      cy < 0 ||
+      cy >= board[0].length ||
+      board[cx][cy] === 0
+    ) {
       continue
     }
 
@@ -58,7 +77,12 @@ function createCopy(matrix: number[][]): number[][] {
   return result
 }
 
-const state = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+const state = [
+  [0, 1, 0],
+  [0, 0, 1],
+  [1, 1, 1],
+  [0, 0, 0],
+]
 
 console.log(gameOfLife(state))
 

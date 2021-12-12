@@ -14,9 +14,7 @@ function firstUniqChar(s: string): number {
     return -1
   }
 
-  return s
-    .split('')
-    .findIndex(ch => ch === candidates[0]) ?? -1
+  return s.split('').findIndex((ch) => ch === candidates[0]) ?? -1
 }
 
 export { firstUniqChar }

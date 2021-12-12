@@ -46,7 +46,10 @@ class Trie {
     return false
   }
 
-  _search(word: string, callback: (node: TrieNode) => boolean): boolean {
+  _search(
+    word: string,
+    callback: (node: TrieNode) => boolean,
+  ): boolean {
     let runner: TrieNode = this.head
 
     for (const ch of word.split('')) {
@@ -81,8 +84,8 @@ class Trie {
 const trie = new Trie()
 
 trie.insert('apple')
-console.log(trie.search('apple'))   // return True
-console.log(trie.search('app'))     // return False
+console.log(trie.search('apple')) // return True
+console.log(trie.search('app')) // return False
 console.log(trie.startsWith('app')) // return True
 trie.insert('app')
 console.log(trie.search('app')) // return True

@@ -14,7 +14,7 @@ function titleToNumber(columnTitle: string): number {
 
     result = result * 26 + current
   }
-  
+
   return result
 }
 
