@@ -26,3 +26,5 @@ function invertTree(root: TreeNode | null): TreeNode | null {
 
   return root
 }
+
+export { TreeNode, invertTree }
