@@ -20,6 +20,8 @@ function countSubstrings(s: string): number {
   return count
 }
 
+// another solution we can use is to expand around each index
+
 function isPalindrome(s: string): boolean {
   return s.split('').reverse().join('') === s
 }
