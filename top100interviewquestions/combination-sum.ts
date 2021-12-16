@@ -1,4 +1,7 @@
-function combinationSum(candidates: number[], target: number): number[][] {
+function combinationSum(
+  candidates: number[],
+  target: number,
+): number[][] {
   const result: number[][] = []
 
   backtrack(candidates, target, result, [])
@@ -6,14 +9,21 @@ function combinationSum(candidates: number[], target: number): number[][] {
   return result
 }
 
-function backtrack(candidates: number[], target: number, result: number[][], current: number[]) {
+function backtrack(
+  candidates: number[],
+  target: number,
+  result: number[][],
+  current: number[],
+) {
   if (target === 0) {
     const candidate = [...current].sort((a, b) => a - b)
-    const candidateAsStr = candidate.map(num => num.toString()).join(',')
+    const candidateAsStr = candidate
+      .map((num) => num.toString())
+      .join(',')
     let exists = false
 
     for (const res of result) {
-      const resAsStr = res.map(num => num.toString()).join(',')
+      const resAsStr = res.map((num) => num.toString()).join(',')
       if (resAsStr === candidateAsStr) {
         exists = true
         break
@@ -34,7 +44,7 @@ function backtrack(candidates: number[], target: number, result: number[][], cur
   }
 }
 
-const candidates = [2,3,6,7]
+const candidates = [2, 3, 6, 7]
 const target = 7
 
 console.log(combinationSum(candidates, target))

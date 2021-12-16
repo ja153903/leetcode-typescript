@@ -13,11 +13,11 @@ function dailyTemperatures(temperatures: number[]): number[] {
   return temps
 }
 
-let temperatures = [73,74,75,71,69,72,76,73]
+let temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
 
 console.log(dailyTemperatures(temperatures))
 
-temperatures = [30,40,50,60]
+temperatures = [30, 40, 50, 60]
 
 console.log(dailyTemperatures(temperatures))
 

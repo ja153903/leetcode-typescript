@@ -23,6 +23,11 @@ function minPathSum(grid: number[][]): number {
   return dp[grid.length - 1][grid[0].length - 1]
 }
 
-console.log(minPathSum([[1, 2, 3], [4, 5, 6]]))
+console.log(
+  minPathSum([
+    [1, 2, 3],
+    [4, 5, 6],
+  ]),
+)
 
 export { minPathSum }

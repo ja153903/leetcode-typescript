@@ -10,7 +10,7 @@ function countSubstrings(s: string): number {
       const substring = s.substring(i, j + 1)
       if (existingPalindromes.has(substring)) {
         count += 1
-      } else if (isPalindrome(substring))  {
+      } else if (isPalindrome(substring)) {
         existingPalindromes.add(substring)
         count += 1
       }
