@@ -1,17 +1,4 @@
-class TreeNode {
-  val: number
-  left: TreeNode | null
-  right: TreeNode | null
-  constructor(
-    val?: number,
-    left?: TreeNode | null,
-    right?: TreeNode | null,
-  ) {
-    this.val = val === undefined ? 0 : val
-    this.left = left === undefined ? null : left
-    this.right = right === undefined ? null : right
-  }
-}
+import { TreeNode } from '../data-structures/index.ts'
 
 function kthSmallest(root: TreeNode | null, k: number): number {
   function inorder(root: TreeNode | null, result: number[]): void {
@@ -32,4 +19,4 @@ function kthSmallest(root: TreeNode | null, k: number): number {
   return result[k - 1]
 }
 
-export { kthSmallest, TreeNode }
+export { kthSmallest }

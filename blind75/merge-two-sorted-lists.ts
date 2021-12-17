@@ -1,11 +1,4 @@
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../data-structures/index.ts'
 
 function mergeTwoLists(
   list1: ListNode | null,
@@ -28,4 +21,4 @@ function mergeTwoLists(
   return list2
 }
 
-export { mergeTwoLists, ListNode }
+export { mergeTwoLists }

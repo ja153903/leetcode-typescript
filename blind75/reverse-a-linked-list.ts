@@ -1,11 +1,4 @@
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../data-structures/index.ts'
 
 function reverseList(head: ListNode | null): ListNode | null {
   let current: ListNode | null = head
@@ -21,4 +14,4 @@ function reverseList(head: ListNode | null): ListNode | null {
   return prev
 }
 
-export { reverseList, ListNode }
+export { reverseList }

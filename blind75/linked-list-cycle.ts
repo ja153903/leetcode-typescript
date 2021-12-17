@@ -1,11 +1,4 @@
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../data-structures/index.ts'
 
 function hasCycleSetSolution(head: ListNode | null): boolean {
   const set = new Set<ListNode>()
@@ -41,4 +34,4 @@ function hasCycle(head: ListNode | null): boolean {
   return false
 }
 
-export { hasCycleSetSolution, hasCycle, ListNode }
+export { hasCycleSetSolution, hasCycle }

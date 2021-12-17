@@ -1,11 +1,4 @@
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+import { ListNode } from '../data-structures/index.ts'
 
 /**
  Do not return anything, modify it in-place instead.
@@ -23,4 +16,4 @@ function deleteNode(root: ListNode | null): void {
   }
 }
 
-export { ListNode, deleteNode }
+export { deleteNode }

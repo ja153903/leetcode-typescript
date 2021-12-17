@@ -1,5 +1,5 @@
 function findDuplicate(nums: number[]): number {
-  // TODO: Not sure how to do this one
+  return 0
 }
 
 console.log(findDuplicate([3, 1, 3, 4, 2]))
