@@ -1,4 +1,4 @@
-import { ListNode } from '../data-structures/index.ts'
+import { ListNode } from "../data-structures/index.ts"
 
 function reverseList(head: ListNode | null): ListNode | null {
   let current: ListNode | null = head

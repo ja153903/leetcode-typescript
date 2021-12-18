@@ -1,4 +1,4 @@
-import { ListNode } from '../data-structures/index.ts'
+import { ListNode } from "../data-structures/index.ts"
 
 function mergeTwoLists(
   list1: ListNode | null,

@@ -2,7 +2,7 @@
 function generateParenthesis(n: number): string[] {
   const result: string[] = []
 
-  backtrack(n, 0, 0, result, '')
+  backtrack(n, 0, 0, result, "")
 
   return result
 }
@@ -21,12 +21,12 @@ function backtrack(
 
   // there should be n open parens
   if (open < n) {
-    backtrack(n, open + 1, close, result, current + '(')
+    backtrack(n, open + 1, close, result, current + "(")
   }
 
   // if there are less closing parens than open parens, then we need to add more of those
   if (close < open) {
-    backtrack(n, open, close + 1, result, current + ')')
+    backtrack(n, open, close + 1, result, current + ")")
   }
 }
 

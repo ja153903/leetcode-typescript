@@ -1,4 +1,4 @@
-import { TreeNode } from '../data-structures/index.ts'
+import { TreeNode } from "../data-structures/index.ts"
 
 function levelOrder(root: TreeNode | null): number[][] {
   if (!root) {

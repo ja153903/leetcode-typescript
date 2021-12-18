@@ -1,4 +1,4 @@
-import { ListNode } from '../data-structures/index.ts'
+import { ListNode } from "../data-structures/index.ts"
 
 /**
  Do not return anything, modify it in-place instead.

@@ -66,7 +66,7 @@ function getTotalPartitionLength(words: string[]): number {
     .reduce((acc, len) => acc + len)
 }
 
-console.log(partition('aab'))
-console.log(partition('a'))
+console.log(partition("aab"))
+console.log(partition("a"))
 
 export { partition }

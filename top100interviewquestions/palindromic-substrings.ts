@@ -23,9 +23,9 @@ function countSubstrings(s: string): number {
 // another solution we can use is to expand around each index
 
 function isPalindrome(s: string): boolean {
-  return s.split('').reverse().join('') === s
+  return s.split("").reverse().join("") === s
 }
 
-console.log(countSubstrings('aaa'))
+console.log(countSubstrings("aaa"))
 
 export { countSubstrings }

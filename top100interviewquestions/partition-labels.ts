@@ -45,7 +45,7 @@ function partitionLabels(s: string): number[] {
   return merge.map((interval) => interval.end - interval.start + 1)
 }
 
-const s = 'ababcbacadefegdehijhklij'
+const s = "ababcbacadefegdehijhklij"
 
 console.log(partitionLabels(s))
 

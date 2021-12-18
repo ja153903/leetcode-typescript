@@ -5,7 +5,7 @@ function numDecodings(s: string): number {
 
   dp[0] = 1
 
-  dp[1] = s[0] === '0' ? 0 : 1
+  dp[1] = s[0] === "0" ? 0 : 1
 
   for (let i = 2; i <= s.length; i++) {
     const current = parseInt(s[i - 1], 10)
