@@ -5,9 +5,7 @@ function sortedArrayToBST(nums: number[]): TreeNode | null {
     return null
   }
 
-  const root = constructTree(nums, 0, nums.length - 1)
-
-  return root
+  return constructTree(nums, 0, nums.length - 1)
 }
 
 function constructTree(
