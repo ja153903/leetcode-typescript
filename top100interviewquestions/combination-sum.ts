@@ -19,11 +19,11 @@ function backtrack(
     const candidate = [...current].sort((a, b) => a - b)
     const candidateAsStr = candidate
       .map((num) => num.toString())
-      .join(",")
+      .join(',')
     let exists = false
 
     for (const res of result) {
-      const resAsStr = res.map((num) => num.toString()).join(",")
+      const resAsStr = res.map((num) => num.toString()).join(',')
       if (resAsStr === candidateAsStr) {
         exists = true
         break

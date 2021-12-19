@@ -1,8 +1,8 @@
-import { assertEquals } from "./testing-deps.ts"
+import { assertEquals } from './testing-deps.ts'
 
-import { canFinish } from "../course-scheduler.ts"
+import { canFinish } from '../course-scheduler.ts'
 
-Deno.test("Course Schedule", () => {
+Deno.test('Course Schedule', () => {
   const prerequisites = [
     [1, 4],
     [2, 4],

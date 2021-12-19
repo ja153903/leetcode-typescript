@@ -1,4 +1,4 @@
-import { TreeNode } from "../data-structures/index.ts"
+import { TreeNode } from '../data-structures/index.ts'
 
 function kthSmallest(root: TreeNode | null, k: number): number {
   function inorder(root: TreeNode | null, result: number[]): void {

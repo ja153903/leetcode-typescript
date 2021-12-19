@@ -1,4 +1,4 @@
-import { ListNode } from "../data-structures/index.ts"
+import { ListNode } from '../data-structures/index.ts'
 
 function hasCycleSetSolution(head: ListNode | null): boolean {
   const set = new Set<ListNode>()

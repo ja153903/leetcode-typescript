@@ -10,24 +10,24 @@ function serialize(root: TreeNode | null): string {
       helper(root.left)
       helper(root.right)
     } else {
-      values.push("#")
+      values.push('#')
     }
   }
   const values: Array<string> = []
 
   helper(root)
 
-  return values.join(" ")
+  return values.join(' ')
 }
 
 /*
  * Decodes your encoded data to tree.
  */
 function deserialize(data: string): TreeNode | null {
-  const values = data.split(" ")
+  const values = data.split(' ')
   function helper(): TreeNode | null {
     const value = values.shift() ?? null
-    if (value === "#") {
+    if (value === '#') {
       return null
     } else if (value) {
       const node = new TreeNode(parseInt(value))

@@ -1,4 +1,4 @@
-import { Node } from "../data-structures/index.ts"
+import { Node } from '../data-structures/index.ts'
 
 function cloneGraph(node: Node | null): Node | null {
   // iterate over all the graph nodes

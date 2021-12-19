@@ -3,7 +3,7 @@ function numIslands(grid: string[][]): number {
 
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[i].length; j++) {
-      if (grid[i][j] === "1") {
+      if (grid[i][j] === '1') {
         dfs(grid, i, j)
         result++
       }
@@ -19,12 +19,12 @@ function dfs(grid: string[][], x: number, y: number) {
     y < 0 ||
     x >= grid.length ||
     y >= grid[0].length ||
-    grid[x][y] !== "1"
+    grid[x][y] !== '1'
   ) {
     return
   }
 
-  grid[x][y] = "2"
+  grid[x][y] = '2'
 
   dfs(grid, x + 1, y)
   dfs(grid, x - 1, y)

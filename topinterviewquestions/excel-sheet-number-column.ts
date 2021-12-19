@@ -18,8 +18,8 @@ function titleToNumber(columnTitle: string): number {
   return result
 }
 
-console.log(titleToNumber("A"))
-console.log(titleToNumber("AB"))
-console.log(titleToNumber("ZY"))
+console.log(titleToNumber('A'))
+console.log(titleToNumber('AB'))
+console.log(titleToNumber('ZY'))
 
 export { titleToNumber }

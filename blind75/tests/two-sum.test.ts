@@ -1,8 +1,8 @@
-import { assertEquals } from "./testing-deps.ts"
+import { assertEquals } from './testing-deps.ts'
 
-import { twoSum } from "../two-sum.ts"
+import { twoSum } from '../two-sum.ts'
 
-Deno.test("Two Sum", () => {
+Deno.test('Two Sum', () => {
   const nums: number[] = [2, 3, 7, 11]
   const target = 9
 

@@ -1,4 +1,4 @@
-import { TreeNode } from "../data-structures/index.ts"
+import { TreeNode } from '../data-structures/index.ts'
 
 function sortedArrayToBST(nums: number[]): TreeNode | null {
   if (nums.length === 0) {
